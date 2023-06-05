@@ -1,17 +1,16 @@
 
-#import functions and classes from other files:
-from energy_costs import get_charging_prices, get_diesel_costs
-from cost_functions import get_opex, get_tco, get_bet_capital_cost, get_dt_capital_cost
-from truck import Truck
 import random
-#import modules and packages
 import matplotlib.pyplot as plt
 import numpy as np
-from infrastructure import RI
 random.seed(488)
 np.random.seed(555)
+
+#import functions and classes from other files
+from energy_costs import get_charging_prices, get_diesel_costs
+from cost_functions import get_opex, get_tco, get_bet_capital_cost, get_dt_capital_cost
+from infrastructure import RI
+from truck import Truck
 import GLOB_VAR
-from datetime import datetime
 
 # Monte Carlo simulation of total ownership costs with uncertainty 
 def monte_carlo_simulation(truck, no_simulations, toll_rate, discount_rate, delivery_year, day_charging = "high_speed", night_charging = "home", support = "no_support", amount_day_charge = 0.4, case = "slow", length = "short_haul", co_size = "large", waiting_cost_scen = "base", charger_scen="base"):
